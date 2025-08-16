@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MagicBean</title>
+</head>
+<body>
+<button onclick="increase(1)"> + </button>
+<input value="5" id= "input"type="number">
+<button onclick="decrease(1)"> - </button>
+<script>
+   const input = document.querySelector('#input')
+   let x;
+   function readInput() {
+    x = +input.value;
+   }
+   function setValue() {
+    input.value = x
+   }
+   function increase(step) {
+   readInput();
+    x += step
+    setValue(x)
+   }
+   function decrease(step) {
+    readInput();
+    if(x>0) {
+        x -= step
+        setValue(x);
+    } else {
+        console.log('Not Allowed');
+    }
+    
+   }
+</script>
+</body>
+</html>
